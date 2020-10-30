@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { incrementAction , decrementAction, resetAction } from './CountActions'
-import { connect } from 'react-redux';;
+import { INCREASE, DECREASE, RESET,INCREASE_ASYNC } from '../reducers/CountReducers';
+import { connect } from 'react-redux';
 
 class ReduxApp extends Component {
     constructor(props) {
@@ -11,20 +11,19 @@ class ReduxApp extends Component {
         this.store.dispatch({ type: 'INCREASE' }());
     }
     handleDecrementAction = () => {
-        this.store.dispatch(decrementAction());
+        this.store.dispatch({ type: 'DECREASE' }()());
     }
-    handleResetAction = () => {
-        this.store.dispatch(resetAction());
-    }
+    // handleResetAction = () => {
+    //     this.store.dispatch(resetAction());
+    // }
     render() {
         return (
             <div>
-                <p>Hello Anupama</p>
-                <p>Let's Learn React.js now - ReduxApp-10</p>
+                <p>ReduxApp - React Class Component</p>
                 {/* <button onClick={() => dispatch({ type: 'increment' })}>Increase</button><br /><br /> */}
                 <button onClick={this.handleIncrementAction}>Increase</button><br /><br />
                 {/* <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button> */}
-                <p>Hi, My friend. U have increase the count : {this.props.count}</p>
+                <p>Hi, My friend. U have increased the count : {this.props.count}</p>
             </div>
         );
     }
@@ -32,10 +31,10 @@ class ReduxApp extends Component {
 
 function mapStateToProps(state){
     return{
-        CountReducers: state.count
+        /*CountReducers*/count: state.count
     }
 }
 
-const mapDispatchToProps={incrementAction,decrementAction, resetAction}
+// const mapDispatchToProps={handleIncrementAction,handleDecrementAction}
 
-export default connect(mapStateToProps,mapDispatchToProps)(ReduxApp);
+export default connect(mapStateToProps,null)(ReduxApp);

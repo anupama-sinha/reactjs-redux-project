@@ -1,9 +1,12 @@
 const initialState = {
     count: 0
-    // sum: 0
 }
 
-// export default (state = initialState, action) => {
+export const INCREASE = "INCREASE";
+export const DECREASE = "DECREASE";
+export const RESET = "RESET";
+export const INCREASE_ASYNC = "INCREASE_ASYNC";
+
 export default function CountReducers (state=initialState, action){
     switch (action.type) {
         case 'INCREASE':

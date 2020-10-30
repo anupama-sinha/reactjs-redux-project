@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 export default class App extends React.Component {
   constructor(){
@@ -25,11 +25,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello Anupama</p>
-        <p>Let's Learn React.js now - App-2</p>
+        <p>App - React Class Component</p>
         <button onClick={this.increase}>Increase</button>
         {/* <button onClick={() => {this.setState({count : this.state.count +1})}}>Increase</button> */}
-        <p>Hi, My friend. U have increase the count : {this.state.count}</p>
+        <p>Hi, My friend. U have increased the count : {this.state.count}</p>
         
       </div>
     );

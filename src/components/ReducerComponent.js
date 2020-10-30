@@ -1,5 +1,5 @@
 import React, { useReducer, useContext } from 'react';
-import './App.css';
+import '../App.css';
 
 export default function ReducerComponent() {
   //Hooks : useReducer
@@ -30,8 +30,7 @@ export default function ReducerComponent() {
 
   return (
     <div>
-      <p>Hello Anupama</p>
-      <p>Let's Learn React.js now - AppFunction2-10</p>
+      <p>ReducerComponent - React Functional Component</p>
       <button onClick={() => dispatch({ type: 'increment' })}>Increase</button><br /><br />
       <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button>
       <p>Hi, My friend. U have increase the count : {state.count}</p>

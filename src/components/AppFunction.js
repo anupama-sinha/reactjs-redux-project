@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import '../App.css';
 
 export default function AppFunction() {
     //Hooks : useState & useEffect
@@ -22,10 +22,9 @@ export default function AppFunction() {
 
     return (
       <div>
-        <p>Hello Anupama</p>
-        <p>Let's Learn React.js now - AppFunction-3</p>
+        <p>AppFunction-React Functional Component</p>
         <button onClick={() => setCount(count+1)}>Increase</button>
-        <p>Hi, My friend. U have increase the count : {count}</p>
+        <p>Hi, My friend. U have increased the count : {count}</p>
         
       </div>
     );
