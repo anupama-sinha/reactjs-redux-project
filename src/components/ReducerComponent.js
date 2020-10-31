@@ -31,7 +31,7 @@ export default function ReducerComponent() {
   return (
     <div>
       <p>ReducerComponent - React Functional Component</p>
-      <button onClick={() => dispatch({ type: 'increment' })}>Increase</button><br /><br />
+      <button onClick={() => dispatch({ type: 'increment' })}>Increase</button>
       <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button>
       <p>Hi, My friend. U have increase the count : {state.count}</p>
     </div>

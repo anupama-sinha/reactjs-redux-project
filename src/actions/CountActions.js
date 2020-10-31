@@ -1,15 +1,18 @@
 export const incrementAction = (count) => {
   return {
-    type: 'INCREASE'
+    type: 'INCREASE',
+    payload: count
   }
 }
-export function decrementAction(){
+export function decrementAction(count){
   return {
-    type: 'DECREASE'
+    type: 'DECREASE',
+    payload: count
   }
 }
-export const resetAction = () => {
+export const resetAction = (count) => {
   return {
-    type: 'RESET'
+    type: 'RESET',
+    payload: count
   }
 }

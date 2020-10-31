@@ -12,16 +12,16 @@ import { store } from './stores/store';
 ReactDOM.render(
   <Provider store={store}> {/* Required for redux store */}
     <React.StrictMode>
-      <div style={{ border: '5px solid red' }}>
+      <div style={{ border: '7px ridge red', width: '725px', padding: '10px', float: 'left' }}>
         <App />
       </div>
-      <div style={{ border: '5px solid green' }}>
+      <div style={{ border: '7px dashed green', width: '725px', padding: '10px', float: 'left' }}>
         <AppFunction />
       </div>
-      <div style={{ border: '5px solid blue' }}>
+      <div style={{ border: '7px groove blue', width: '725px', padding: '10px', float: 'left' }}>
         <ReducerComponent />
       </div>
-      <div style={{ border: '5px solid red' }}>
+      <div style={{ border: '7px solid maroon', width: '725px', padding: '10px', float: 'left' }}>
         <ReduxApp />
       </div>
     </React.StrictMode>
