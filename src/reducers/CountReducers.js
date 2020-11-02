@@ -1,13 +1,9 @@
 const initialState = {
-    count: 0
+    count: 0,
+    countSaga: 0
 }
 
-export const INCREASE = "INCREASE";
-export const DECREASE = "DECREASE";
-export const RESET = "RESET";
-export const INCREASE_ASYNC = "INCREASE_ASYNC";
-
-export default function CountReducers (state=initialState, action){
+export default function CountReducers(state = initialState, action) {
     switch (action.type) {
         case 'INCREASE':
             return {
@@ -24,7 +20,20 @@ export default function CountReducers (state=initialState, action){
                 ...state,
                 count: 0
             }
+        case 'INCREASE_ASYNC':
+            return {
+                ...state,
+                countSaga: action.payload + 1
+            }
+        case 'INCREASE_ASYNC_WATCH':
+            console.log("Action.payload",action)
+            return {
+                ...state,
+                countSaga: action.payload + 1
+            }
         default:
-            return state
+            return {
+                ...state
+            }    
     }
 }

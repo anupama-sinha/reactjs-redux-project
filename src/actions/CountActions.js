@@ -16,3 +16,18 @@ export const resetAction = (count) => {
     payload: count
   }
 }
+
+//Saga
+export const incrementActionAsync = (countSaga) => {
+  return {
+    type: 'INCREASE_ASYNC',
+    payload: countSaga
+  }
+}
+
+export const incrementActionAsyncSaga  = (countSaga) => {
+  return {
+    type: 'INCREASE_ASYNC_WATCH',
+    payload: countSaga
+  }
+}

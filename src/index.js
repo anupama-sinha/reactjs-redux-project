@@ -7,10 +7,17 @@ import ReducerComponent from './components/ReducerComponent';
 import ReduxApp from './components/ReduxApp';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
-import { store } from './stores/store';
+//Type 1 : Redux Store
+// import { createStore } from 'redux'
+// import CountReducers from './reducers/CountReducers';
+// const store = createStore(CountReducers)
+
+//Type 2 : Redux with Middleware Saga Store
+import { store } from './stores/store'
+import ReduxSagaApp from './components/ReduxSagaApp'
 
 ReactDOM.render(
-  <Provider store={store}> {/* Required for redux store */}
+  <Provider store={store}> 
     <React.StrictMode>
       <div style={{ border: '7px ridge red', width: '725px', padding: '10px', float: 'left' }}>
         <App />
@@ -23,6 +30,9 @@ ReactDOM.render(
       </div>
       <div style={{ border: '7px solid maroon', width: '725px', padding: '10px', float: 'left' }}>
         <ReduxApp />
+      </div>
+      <div style={{ border: '7px solid cyan', width: '725px', padding: '10px', float: 'left' }}>
+        <ReduxSagaApp />
       </div>
     </React.StrictMode>
   </Provider>,
