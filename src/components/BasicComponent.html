@@ -1,0 +1,187 @@
+<html>
+
+<head>
+    <title>React Basics</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="basic-app">
+        React to be rendered
+    </div>
+
+    <script type='text/babel'>
+
+        //Example 4 : Variable for JSX
+        // var msg = <h1>Hello Anupama Sinha</h1>;
+        // var target = document.getElementById("basic-app");
+
+        //Example 6 : Stateless functional component
+        var Associates = function(){
+            return(
+                <h1>Associates : Developer,Tester</h1>
+            );
+        }
+
+        //Example 7 : Separate component functions 
+        var Developer = function(){
+            return(
+                <h1>Developer</h1>
+            );
+        }
+        var Tester = function(){
+            return(
+                <h1>Tester</h1>
+            );
+        }
+
+        //Example 8 : React Class Component
+        class ProductOwner extends React.Component{
+            render(){
+                return(
+                    <h1>ProductOwner React Class</h1>
+                );
+            }
+        }
+
+        //Example 9 : Function Component with CSS
+        var ScrumMaster  = function(){
+            var styleScrumMaster = {
+                height : 100,
+                backgroundColor : "pink"
+            }
+            return(
+                    <h1 style={styleScrumMaster}>ScrumMaster React Class</h1>
+            );
+        }
+
+        //Example 10 : React Class Component with CSS
+        class ProductOwnerStyle extends React.Component{
+            render(){
+                var styleProductOwner = {
+                    height : 100,
+                    backgroundColor : "red"
+                }
+                return(
+                    <h1 style={styleProductOwner}>ProductOwnerStyle React Class</h1>
+                );
+            }
+        }
+
+        //Example 11 : Passing props to Functional Component
+        var Leader = function(props){
+            return(
+                <h1>Leader {props.name}</h1>
+            );
+        }
+
+        //Example 12 : Passing props to React Class Component
+        class Architect extends React.Component{
+            render(){
+                var styleArchitect = {
+                    height : 100,
+                    backgroundColor : this.props.color
+                }
+                return(
+                    <h1 style={styleArchitect}>Architect React Class {this.props.name}</h1>
+                );
+            }
+        }
+
+        //Example 12 : Reuse Common Component with Different Style & Name props
+        class Employee extends React.Component{
+            render(){
+                var styleEmployee = {
+                    height : 100,
+                    backgroundColor : this.props.colorcode
+                }
+                return(
+                    <h1 style={styleEmployee}>{this.props.desgn}</h1>
+                );
+            }
+        }
+
+        //Example 13 : Array of Objects
+        var employees = [{colorcode: "red", desgn: "coder"},{colorcode: "green", desgn: "reviewer"}]
+
+        //Example 14 : Array of Objects with map()
+        function EmployeeArray(props){
+                var empList = props.role;
+                console.log("props {}",props)
+                var empListItems = empList.map(function(role){
+                    return(
+                        <h1>{role.desgn}</h1>
+                    );
+                });
+                    
+                return(empListItems);
+        }
+
+        //Example 15 : Filter an Array of Objects and then print all
+        function EmployeeArrayFilter(props){
+                var empList = props.role;
+                console.log("props {}",props)
+                var empListItems = empList.filter(function(roles){
+                    return roles.colorcode=='red';
+                })
+                .map(function(role){
+                    return(
+                        <h1>{role.desgn}</h1>
+                    );
+                });
+                    
+                return(empListItems);
+        }
+
+        //Renders 1st element(What) to 2nd element(Where)
+        ReactDOM.render(
+            // Example 1 : Simple Header element
+            // <h1>Hello Anupama</h1>,
+
+            //Example 2 : List element
+            // <ul>
+            //     <li>Developer</li>
+            //     <li>Tester</li>
+            //     <li>Product Owner</li>
+            //     <li>Scrum Master</li>    
+            // </ul>,
+
+            //Example 3 : Link anchor tag
+            // <a href="www.google.com">Google</a>,
+            
+            //Example 4 : Variable for JSX
+            // msg,target
+
+            //Example 5 : Render 2 JSX elements to DOM
+            // <div id="basic-app-elemets">
+            //     <h1>Hi</h1>
+            //     <h2>Anupama</h2>
+            // </div>,
+
+            //Example 6 : Stateless functional component
+            // <Associates/>,
+
+            //Example 7 : Separate component functions 
+            <div>
+                <Associates/>
+                <Developer/>
+                <Tester/>
+                <ProductOwner/>
+                <ScrumMaster/>
+                <ProductOwnerStyle/>
+                <Leader name="Anupama"/>
+                <Architect color="blue" name="Sinha"/>
+                <Employee colorcode="cyan" desgn="HR"/>
+                <Employee colorcode="maroon" desgn="Lead"/>
+                <EmployeeArray role={employees}/>
+                <EmployeeArrayFilter role={employees}/>
+            </div>,
+
+            document.getElementById("basic-app")
+        );
+    </script>
+</body>
+
+</html>
